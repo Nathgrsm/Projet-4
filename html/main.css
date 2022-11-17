@@ -1,15 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300italic,300,500,400italic,500italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 
-
-a, a:link, a:visited, a:focus, a:hover, a:active{
-    text-decoration:none;
-}
-
 html,
 body {
-	height: 100%;
 	margin: 0;
+  background-color: #000000;
 }
 
 html {
@@ -17,10 +12,20 @@ html {
     font-family: "Roboto", sans-serif;
     font-weight: normal;
     color: rgba(0,0,0,0.87);
+    scroll-behavior: smooth;
 }
 
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  text-decoration:none;
+}
+
+/* ########################################################## */
+/* NAVBAR */
+/* ########################################################## */
+
 .navbar-fixed {
-    position: relative;
+    position: sticky;
+    top: 0;
     height: 56px;
     z-index: 998;
 }
@@ -32,14 +37,15 @@ html {
 }
 
 .navbar-fixed nav {
-    background-color: #000000;
+    background-color: rgba(0,0,0,0.19);
     font-family: "Roboto Mono", Roboto, sans-serif;
     text-transform: uppercase;
 }
 
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+.header-shadow {
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-}
+  }
+
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block;
@@ -87,14 +93,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     color: #FFFFFF !important;
 }
 
-header .container .row .hero {
-    visibility: visible;
-    padding: 28px 32px 30px;
-}
-
 nav {
     color: #fff;
-    background-color: #ee6e73;
     width: 100%;
     height: 56px;
     line-height: 56px;
@@ -157,18 +157,24 @@ nav ul a {
 }
 
 
+/* ########################################################## */
+/* HEADER */
+/* ########################################################## */
+
 header {
 	background: linear-gradient(rgba(57, 50, 82, 50%), #000000), url(images/rl-wallpaper.jpg) no-repeat center/cover;
-	min-height: 450px;
-	height: 50%;
+	min-height: 1000px;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 }
 
+
+
 header .container .row .hero {
-    visibility: visible;
+  visibility: visible;
 	padding: 28px 32px 30px;
 }
 
@@ -192,115 +198,59 @@ header .container .row .hero h1 {
 	font-size: 3em;
 }
 
-header .container .row .hero .stat-holder .row {
+header .container .row .hero .stat-holder {
 	max-width: 500px;
 	margin: 0 auto;
+}
+
+header .container .row .hero .stat-holder .row {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-around;
 }
 
 header .container .row .hero .stat-holder .row .col .stat-number {
 	font-size: 2em;
 	font-weight: 100;
 	letter-spacing: 5px;
-    visibility: visible;
-    animation: fadeIn 0.7s;
+  visibility: visible;
+  animation: fadeIn 0.7s;
 }
 
 header .container .row .hero .stat-holder .row .col label {
 	font-size: 1em;
 	color: #fff;
 	letter-spacing: 3px;
+  
+}
+
+/* ########################################################## */
+/* DESCRIPTION */
+/* ########################################################## */
+
+.gradient-text {
+  background-color: red;
+  background-image: linear-gradient(45deg, #3751e3, #b12f54);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+h1 {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 4em;
+  text-align: center;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/** MODES DE JEU **/
+/* ########################################################## */
+/* MODES DE JEU */
+/* ########################################################## */
 
 :root{
     --background-dark: #2d3548;
@@ -326,18 +276,14 @@ header .container .row .hero .stat-holder .row .col label {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
   }
-  
-  body{
-    height: 100%;
-  }
-  
+    
   .hero-section{
     align-items: flex-start;
     background-color : #000000;
     display: flex;
-    min-height: 100%;
+    min-height: 60%;
     justify-content: center;
-    padding: var(--spacing-xxl) var(--spacing-l);
+    padding: var(--spacing-xl) var(--spacing-l);
   }
   
   .card-grid{
@@ -372,6 +318,13 @@ header .container .row .hero .stat-holder .row .col label {
     padding-bottom: 150%;
     width: 100%;
   }
+
+  .card.rank:before{
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+  }
   
   .card__background{
     background-size: cover;
@@ -388,6 +341,11 @@ header .container .row .hero .stat-holder .row .col label {
     transition: 
       filter 200ms linear,
       transform 200ms linear;
+  }
+
+  .card__background.image-resize{
+    width : 300px;
+    height : 300px;
   }
   
   .card:hover .card__background{
@@ -417,5 +375,4 @@ header .container .row .hero .stat-holder .row .col label {
     font-size: 1.9rem;
     text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
     line-height: 1.4;
-    word-spacing: 100vw;
   }
