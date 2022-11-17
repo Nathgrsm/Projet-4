@@ -1,5 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300italic,300,500,400italic,500italic,700,700italic);
+/* ########################################################## */
+/* FONT */
+/* ########################################################## */
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+
+
+/* ########################################################## */
+/* GENERAL */
+/* ########################################################## */
 
 html,
 body {
@@ -9,7 +18,7 @@ body {
 
 html {
 	line-height: 1.5;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 	color: rgba(0, 0, 0, 0.87);
 	scroll-behavior: smooth;
@@ -45,7 +54,7 @@ a:active {
 
 .navbar-fixed nav {
 	background-color: rgba(0, 0, 0, 0.19);
-	font-family: "Roboto Mono", Roboto, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
 }
 
@@ -154,6 +163,7 @@ nav ul {
 }
 
 nav ul a {
+	font-family: 'Open Sans', sans-serif;
 	font-size: 1rem;
 	color: #fff;
 	display: block;
@@ -197,13 +207,13 @@ header .container .row .hero .sub-title {
 }
 
 header .container .row .hero h1 {
-	text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+	text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.6);
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 800;
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	margin: 0;
-	font-size: 3em;
+	font-size: 5em;
 }
 
 header .container .row .hero .stat-holder {
